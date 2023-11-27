@@ -57,6 +57,6 @@ def get_result_json(books: Callable[[...], dict], users: Callable[[...], dict]):
 
 
 result = get_result_json(get_books_json(books_file_path), get_users_json(users_file_path))
-json_result = json.dumps(result, indent=4)
 
-print(json_result)
+with open('result.json', 'w') as outfile:
+    json.dump(result, outfile, indent=4)
